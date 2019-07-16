@@ -1,6 +1,6 @@
 --- 
 
-title: Api Documentation 
+title: Discover Account Servicing API 
 
 language_tabs: 
    - shell 
@@ -18,9 +18,9 @@ search: true
 
 # Introduction 
 
-Api Documentation 
+API for Discover Account's transactions 
 
-**Version:** 1.0 
+**Version:** 1.0.0 
 
 # /ERROR
 ## ***GET*** 
@@ -124,7 +124,7 @@ Api Documentation
 # /V1/TRANSACTIONS
 ## ***GET*** 
 
-**Summary:** getAllTransactions
+**Summary:** View all Transactions
 
 ### HTTP Request 
 `***GET*** /v1/transactions` 
@@ -146,7 +146,7 @@ Api Documentation
 
 ## ***POST*** 
 
-**Summary:** saveTransaction
+**Summary:** Save a transaction
 
 ### HTTP Request 
 `***POST*** /v1/transactions` 
@@ -161,7 +161,8 @@ Api Documentation
 
 | Code | Description |
 | ---- | ----------- |
-| 201 | Created |
+| 201 | Successfully created transaction |
+| 400 | No transaction found with ID #id |
 | 401 | Unauthorized |
 | 403 | Forbidden |
 | 404 | Not Found |
@@ -169,7 +170,7 @@ Api Documentation
 # /V1/TRANSACTIONS/{ID}
 ## ***GET*** 
 
-**Summary:** getTransaction
+**Summary:** View details of a specific transaction
 
 ### HTTP Request 
 `***GET*** /v1/transactions/{id}` 
@@ -184,14 +185,15 @@ Api Documentation
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | OK |
+| 200 | Successfully retrieved transaction |
+| 400 | No transaction found with ID #id |
 | 401 | Unauthorized |
 | 403 | Forbidden |
 | 404 | Not Found |
 
 ## ***PUT*** 
 
-**Summary:** updateTransaction
+**Summary:** Update details of a specific transaction
 
 ### HTTP Request 
 `***PUT*** /v1/transactions/{id}` 
@@ -207,14 +209,15 @@ Api Documentation
 
 | Code | Description |
 | ---- | ----------- |
-| 201 | Created |
+| 201 | Successfully updated transaction |
+| 400 | No transaction found with ID #id |
 | 401 | Unauthorized |
 | 403 | Forbidden |
 | 404 | Not Found |
 
 ## ***DELETE*** 
 
-**Summary:** deleteTransaction
+**Summary:** Delete a specific transaction
 
 ### HTTP Request 
 `***DELETE*** /v1/transactions/{id}` 
@@ -229,8 +232,9 @@ Api Documentation
 
 | Code | Description |
 | ---- | ----------- |
-| 200 | OK |
+| 200 | Successfully updated transaction |
 | 204 | No Content |
+| 400 | No transaction found with ID #id |
 | 401 | Unauthorized |
 | 403 | Forbidden |
 
