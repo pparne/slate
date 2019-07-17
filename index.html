@@ -222,14 +222,6 @@
             <a href="#discover-account-servicing-api" class="toc-h1 toc-link" data-title="Discover Account Servicing API v1.0.0">Discover Account Servicing API v1.0.0</a>
           </li>
           <li>
-            <a href="#discover-account-servicing-api-basic-error-controller" class="toc-h1 toc-link" data-title="basic-error-controller">basic-error-controller</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#error" class="toc-h2 toc-link" data-title="error">error</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#discover-account-servicing-api-transaction-controller" class="toc-h1 toc-link" data-title="transaction-controller">transaction-controller</a>
               <ul class="toc-list-h2">
                   <li>
@@ -239,7 +231,7 @@
                     <a href="#save-a-transaction" class="toc-h2 toc-link" data-title="Save a transaction">Save a transaction</a>
                   </li>
                   <li>
-                    <a href="#view-details-of-a-specific-transaction" class="toc-h2 toc-link" data-title="View details of a specific transaction">View details of a specific transaction</a>
+                    <a href="#get-transaction" class="toc-h2 toc-link" data-title="Get transaction">Get transaction</a>
                   </li>
                   <li>
                     <a href="#update-details-of-a-specific-transaction" class="toc-h2 toc-link" data-title="Update details of a specific transaction">Update details of a specific transaction</a>
@@ -256,13 +248,16 @@
                     <a href="#tocSiterable" class="toc-h2 toc-link" data-title="Iterable">Iterable</a>
                   </li>
                   <li>
-                    <a href="#tocSmodelandview" class="toc-h2 toc-link" data-title="ModelAndView">ModelAndView</a>
+                    <a href="#tocSstacktraceelement" class="toc-h2 toc-link" data-title="StackTraceElement">StackTraceElement</a>
+                  </li>
+                  <li>
+                    <a href="#tocSthrowable" class="toc-h2 toc-link" data-title="Throwable">Throwable</a>
                   </li>
                   <li>
                     <a href="#tocStransaction" class="toc-h2 toc-link" data-title="Transaction">Transaction</a>
                   </li>
                   <li>
-                    <a href="#tocSview" class="toc-h2 toc-link" data-title="View">View</a>
+                    <a href="#tocStransactiondoesnotexistexception" class="toc-h2 toc-link" data-title="TransactionDoesNotExistException">TransactionDoesNotExistException</a>
                   </li>
               </ul>
           </li>
@@ -288,100 +283,6 @@
 </ul>
 
 <p>Email: <a href="mailto:noone@nowhere.com">Dont&#39; Contact me!</a> Web: <a href="https://dontcontactme.nooneexits/about/">Dont&#39; Contact me!</a> </p>
-
-<h1 id="discover-account-servicing-api-basic-error-controller">basic-error-controller</h1>
-
-<p>Basic Error Controller</p>
-<h2 id='error'>error</h2>
-<p><a id="opIderrorUsingPATCH"></a></p>
-
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/error"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PATCH"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre>
-<p><code>PATCH /error</code></p>
-
-<blockquote>
-<p>Example responses</p>
-
-<p>200 Response</p>
-</blockquote>
-
-<h3 id="error-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>OK</td>
-<td>Inline</td>
-</tr>
-<tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
-<td>None</td>
-</tr>
-</tbody></table>
-
-<h3 id="error-responseschema">Response Schema</h3>
-
-<p>Status Code <strong>200</strong></p>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>» <strong>additionalProperties</strong></td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-This operation does not require authentication
-</aside>
 
 <h1 id="discover-account-servicing-api-transaction-controller">transaction-controller</h1>
 
@@ -425,7 +326,7 @@ This operation does not require authentication
 <td>query</td>
 <td>string</td>
 <td>false</td>
-<td>sort</td>
+<td>sorting order</td>
 </tr>
 </tbody></table>
 
@@ -451,24 +352,6 @@ This operation does not require authentication
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>OK</td>
 <td><a href="#schemaiterable">Iterable</a></td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
-<td>None</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
-<td>None</td>
 </tr>
 </tbody></table>
 
@@ -503,10 +386,10 @@ This operation does not require authentication
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -525,8 +408,8 @@ This operation does not require authentication
 <td>body</td>
 <td>body</td>
 <td><a href="#schematransaction">Transaction</a></td>
-<td>true</td>
-<td>transaction</td>
+<td>false</td>
+<td>Transaction to save</td>
 </tr>
 </tbody></table>
 
@@ -537,10 +420,10 @@ This operation does not require authentication
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -563,33 +446,15 @@ This operation does not require authentication
 <tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>No transaction found with ID #id</td>
-<td>None</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
-<td>None</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
-<td>None</td>
+<td>No transaction found with #id</td>
+<td><a href="#schematransactiondoesnotexistexception">TransactionDoesNotExistException</a></td>
 </tr>
 </tbody></table>
 
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='view-details-of-a-specific-transaction'>View details of a specific transaction</h2>
+<h2 id='get-transaction'>Get transaction</h2>
 <p><a id="opIdgetTransactionUsingGET"></a></p>
 
 <blockquote>
@@ -612,7 +477,7 @@ This operation does not require authentication
 </code></pre>
 <p><code>GET /v1/transactions/{id}</code></p>
 
-<h3 id="view-details-of-a-specific-transaction-parameters">Parameters</h3>
+<h3 id="get-transaction-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -628,7 +493,7 @@ This operation does not require authentication
 <td>path</td>
 <td>integer(int64)</td>
 <td>true</td>
-<td>id</td>
+<td>Transaction Identifier</td>
 </tr>
 </tbody></table>
 
@@ -639,14 +504,14 @@ This operation does not require authentication
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="view-details-of-a-specific-transaction-responses">Responses</h3>
+<h3 id="get-transaction-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -665,26 +530,8 @@ This operation does not require authentication
 <tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
-<td>No transaction found with ID #id</td>
-<td>None</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
-<td>None</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
-<td>None</td>
+<td>No transaction found with #id</td>
+<td><a href="#schematransactiondoesnotexistexception">TransactionDoesNotExistException</a></td>
 </tr>
 </tbody></table>
 
@@ -719,10 +566,10 @@ This operation does not require authentication
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -742,14 +589,14 @@ This operation does not require authentication
 <td>path</td>
 <td>integer(int64)</td>
 <td>true</td>
-<td>id</td>
+<td>Transaction Id that needs to be updated</td>
 </tr>
 <tr>
 <td>body</td>
 <td>body</td>
 <td><a href="#schematransaction">Transaction</a></td>
-<td>true</td>
-<td>transaction</td>
+<td>false</td>
+<td>Transaction with updated info</td>
 </tr>
 </tbody></table>
 
@@ -760,10 +607,10 @@ This operation does not require authentication
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -787,24 +634,6 @@ This operation does not require authentication
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
-<td>None</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
-<td>None</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>Not Found</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -851,7 +680,7 @@ This operation does not require authentication
 <td>path</td>
 <td>integer(int64)</td>
 <td>true</td>
-<td>id</td>
+<td>Identifier of transaction that is being deleted.</td>
 </tr>
 </tbody></table>
 
@@ -872,27 +701,9 @@ This operation does not require authentication
 <td>None</td>
 </tr>
 <tr>
-<td>204</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
-<td>No Content</td>
-<td>None</td>
-</tr>
-<tr>
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
-<td>None</td>
-</tr>
-<tr>
-<td>401</td>
-<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
-<td>Unauthorized</td>
-<td>None</td>
-</tr>
-<tr>
-<td>403</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
-<td>Forbidden</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -911,26 +722,19 @@ This operation does not require authentication
 <h3 id='properties'>Properties</h3>
 <p><em>None</em></p>
 
-<h2 id="tocSmodelandview">ModelAndView</h2>
+<h2 id="tocSstacktraceelement">StackTraceElement</h2>
 
-<p><a id="schemamodelandview"></a></p>
+<p><a id="schemastacktraceelement"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="s2">"modelMap"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="s2">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100 CONTINUE"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"view"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"viewName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"className"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lineNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"methodName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nativeMethod"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p><em>ModelAndView</em></p>
+<p><em>StackTraceElement</em></p>
 <h3 id='properties-2'>Properties</h3>
 <table><thead>
 <tr>
@@ -942,336 +746,109 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>empty</td>
-<td>boolean</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>model</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>modelMap</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» <strong>additionalProperties</strong></td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>reference</td>
-<td>boolean</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>status</td>
+<td>className</td>
 <td>string</td>
 <td>false</td>
 <td>none</td>
 <td>none</td>
 </tr>
 <tr>
-<td>view</td>
-<td><a href="#schemaview">View</a></td>
+<td>fileName</td>
+<td>string</td>
 <td>false</td>
 <td>none</td>
 <td>none</td>
 </tr>
 <tr>
-<td>viewName</td>
+<td>lineNumber</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>methodName</td>
 <td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>nativeMethod</td>
+<td>boolean</td>
 <td>false</td>
 <td>none</td>
 <td>none</td>
 </tr>
 </tbody></table>
-<h4 id='enumerated-values'>Enumerated Values</h4>
+
+<h2 id="tocSthrowable">Throwable</h2>
+
+<p><a id="schemathrowable"></a></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"cause"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"localizedMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stackTrace"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"className"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lineNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"methodName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nativeMethod"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"suppressed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="kc">null</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p><em>Throwable</em></p>
+<h3 id='properties-3'>Properties</h3>
 <table><thead>
 <tr>
-<th>Property</th>
-<th>Value</th>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>status</td>
-<td>100 CONTINUE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>101 SWITCHING_PROTOCOLS</td>
-</tr>
-<tr>
-<td>status</td>
-<td>102 PROCESSING</td>
-</tr>
-<tr>
-<td>status</td>
-<td>103 CHECKPOINT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>200 OK</td>
-</tr>
-<tr>
-<td>status</td>
-<td>201 CREATED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>202 ACCEPTED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>203 NON_AUTHORITATIVE_INFORMATION</td>
-</tr>
-<tr>
-<td>status</td>
-<td>204 NO_CONTENT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>205 RESET_CONTENT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>206 PARTIAL_CONTENT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>207 MULTI_STATUS</td>
-</tr>
-<tr>
-<td>status</td>
-<td>208 ALREADY_REPORTED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>226 IM_USED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>300 MULTIPLE_CHOICES</td>
-</tr>
-<tr>
-<td>status</td>
-<td>301 MOVED_PERMANENTLY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>302 FOUND</td>
-</tr>
-<tr>
-<td>status</td>
-<td>302 MOVED_TEMPORARILY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>303 SEE_OTHER</td>
-</tr>
-<tr>
-<td>status</td>
-<td>304 NOT_MODIFIED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>305 USE_PROXY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>307 TEMPORARY_REDIRECT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>308 PERMANENT_REDIRECT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>400 BAD_REQUEST</td>
-</tr>
-<tr>
-<td>status</td>
-<td>401 UNAUTHORIZED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>402 PAYMENT_REQUIRED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>403 FORBIDDEN</td>
-</tr>
-<tr>
-<td>status</td>
-<td>404 NOT_FOUND</td>
-</tr>
-<tr>
-<td>status</td>
-<td>405 METHOD_NOT_ALLOWED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>406 NOT_ACCEPTABLE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>407 PROXY_AUTHENTICATION_REQUIRED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>408 REQUEST_TIMEOUT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>409 CONFLICT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>410 GONE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>411 LENGTH_REQUIRED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>412 PRECONDITION_FAILED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>413 PAYLOAD_TOO_LARGE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>413 REQUEST_ENTITY_TOO_LARGE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>414 URI_TOO_LONG</td>
-</tr>
-<tr>
-<td>status</td>
-<td>414 REQUEST_URI_TOO_LONG</td>
-</tr>
-<tr>
-<td>status</td>
-<td>415 UNSUPPORTED_MEDIA_TYPE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>416 REQUESTED_RANGE_NOT_SATISFIABLE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>417 EXPECTATION_FAILED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>418 I_AM_A_TEAPOT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>419 INSUFFICIENT_SPACE_ON_RESOURCE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>420 METHOD_FAILURE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>421 DESTINATION_LOCKED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>422 UNPROCESSABLE_ENTITY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>423 LOCKED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>424 FAILED_DEPENDENCY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>426 UPGRADE_REQUIRED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>428 PRECONDITION_REQUIRED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>429 TOO_MANY_REQUESTS</td>
-</tr>
-<tr>
-<td>status</td>
-<td>431 REQUEST_HEADER_FIELDS_TOO_LARGE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>451 UNAVAILABLE_FOR_LEGAL_REASONS</td>
-</tr>
-<tr>
-<td>status</td>
-<td>500 INTERNAL_SERVER_ERROR</td>
-</tr>
-<tr>
-<td>status</td>
-<td>501 NOT_IMPLEMENTED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>502 BAD_GATEWAY</td>
-</tr>
-<tr>
-<td>status</td>
-<td>503 SERVICE_UNAVAILABLE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>504 GATEWAY_TIMEOUT</td>
-</tr>
-<tr>
-<td>status</td>
-<td>505 HTTP_VERSION_NOT_SUPPORTED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>506 VARIANT_ALSO_NEGOTIATES</td>
-</tr>
-<tr>
-<td>status</td>
-<td>507 INSUFFICIENT_STORAGE</td>
-</tr>
-<tr>
-<td>status</td>
-<td>508 LOOP_DETECTED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>509 BANDWIDTH_LIMIT_EXCEEDED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>510 NOT_EXTENDED</td>
-</tr>
-<tr>
-<td>status</td>
-<td>511 NETWORK_AUTHENTICATION_REQUIRED</td>
+<td>cause</td>
+<td><a href="#schemathrowable">Throwable</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>localizedMessage</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>stackTrace</td>
+<td>[<a href="#schemastacktraceelement">StackTraceElement</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>suppressed</td>
+<td>[<a href="#schemathrowable">Throwable</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
@@ -1280,16 +857,16 @@ This operation does not require authentication
 <p><a id="schematransaction"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
 <p><em>Transaction</em></p>
-<h3 id='properties-3'>Properties</h3>
+<h3 id='properties-4'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1343,16 +920,62 @@ This operation does not require authentication
 </tr>
 </tbody></table>
 
-<h2 id="tocSview">View</h2>
+<h2 id="tocStransactiondoesnotexistexception">TransactionDoesNotExistException</h2>
 
-<p><a id="schemaview"></a></p>
+<p><a id="schematransactiondoesnotexistexception"></a></p>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"cause"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"cause"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"localizedMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stackTrace"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"className"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lineNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"methodName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nativeMethod"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"suppressed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="kc">null</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"localizedMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"stackTrace"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"className"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"lineNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"methodName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"nativeMethod"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"suppressed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"cause"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"localizedMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stackTrace"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"className"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fileName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lineNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"methodName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"nativeMethod"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"suppressed"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="kc">null</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<p><em>View</em></p>
-<h3 id='properties-4'>Properties</h3>
+<p><em>TransactionDoesNotExistException</em></p>
+<h3 id='properties-5'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -1363,8 +986,36 @@ This operation does not require authentication
 </tr>
 </thead><tbody>
 <tr>
-<td>contentType</td>
+<td>cause</td>
+<td><a href="#schemathrowable">Throwable</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>localizedMessage</td>
 <td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>stackTrace</td>
+<td>[<a href="#schemastacktraceelement">StackTraceElement</a>]</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>suppressed</td>
+<td>[<a href="#schemathrowable">Throwable</a>]</td>
 <td>false</td>
 <td>none</td>
 <td>none</td>
