@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;java&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,7 +211,7 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="java">Java</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -219,610 +219,1162 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            <a href="#discover-account-servicing-api" class="toc-h1 toc-link" data-title="Discover Account Servicing API v1.0.0">Discover Account Servicing API v1.0.0</a>
           </li>
           <li>
-            <a href="#error" class="toc-h1 toc-link" data-title="/ERROR">/ERROR</a>
+            <a href="#discover-account-servicing-api-basic-error-controller" class="toc-h1 toc-link" data-title="basic-error-controller">basic-error-controller</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get" class="toc-h2 toc-link" data-title="GET"><strong><em>GET</em></strong></a>
-                  </li>
-                  <li>
-                    <a href="#post" class="toc-h2 toc-link" data-title="POST"><strong><em>POST</em></strong></a>
-                  </li>
-                  <li>
-                    <a href="#put" class="toc-h2 toc-link" data-title="PUT"><strong><em>PUT</em></strong></a>
-                  </li>
-                  <li>
-                    <a href="#delete" class="toc-h2 toc-link" data-title="DELETE"><strong><em>DELETE</em></strong></a>
-                  </li>
-                  <li>
-                    <a href="#options" class="toc-h2 toc-link" data-title="OPTIONS"><strong><em>OPTIONS</em></strong></a>
-                  </li>
-                  <li>
-                    <a href="#patch" class="toc-h2 toc-link" data-title="PATCH"><strong><em>PATCH</em></strong></a>
+                    <a href="#error" class="toc-h2 toc-link" data-title="error">error</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#v1-transactions" class="toc-h1 toc-link" data-title="/V1/TRANSACTIONS">/V1/TRANSACTIONS</a>
+            <a href="#discover-account-servicing-api-transaction-controller" class="toc-h1 toc-link" data-title="transaction-controller">transaction-controller</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-2" class="toc-h2 toc-link" data-title="GET"><strong><em>GET</em></strong></a>
+                    <a href="#view-all-transactions" class="toc-h2 toc-link" data-title="View all Transactions">View all Transactions</a>
                   </li>
                   <li>
-                    <a href="#post-2" class="toc-h2 toc-link" data-title="POST"><strong><em>POST</em></strong></a>
+                    <a href="#save-a-transaction" class="toc-h2 toc-link" data-title="Save a transaction">Save a transaction</a>
+                  </li>
+                  <li>
+                    <a href="#view-details-of-a-specific-transaction" class="toc-h2 toc-link" data-title="View details of a specific transaction">View details of a specific transaction</a>
+                  </li>
+                  <li>
+                    <a href="#update-details-of-a-specific-transaction" class="toc-h2 toc-link" data-title="Update details of a specific transaction">Update details of a specific transaction</a>
+                  </li>
+                  <li>
+                    <a href="#delete-a-specific-transaction" class="toc-h2 toc-link" data-title="Delete a specific transaction">Delete a specific transaction</a>
                   </li>
               </ul>
           </li>
           <li>
-            <a href="#v1-transactions-id" class="toc-h1 toc-link" data-title="/V1/TRANSACTIONS/{ID}">/V1/TRANSACTIONS/{ID}</a>
+            <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-3" class="toc-h2 toc-link" data-title="GET"><strong><em>GET</em></strong></a>
+                    <a href="#tocSiterable" class="toc-h2 toc-link" data-title="Iterable">Iterable</a>
                   </li>
                   <li>
-                    <a href="#put-2" class="toc-h2 toc-link" data-title="PUT"><strong><em>PUT</em></strong></a>
+                    <a href="#tocSmodelandview" class="toc-h2 toc-link" data-title="ModelAndView">ModelAndView</a>
                   </li>
                   <li>
-                    <a href="#delete-2" class="toc-h2 toc-link" data-title="DELETE"><strong><em>DELETE</em></strong></a>
+                    <a href="#tocStransaction" class="toc-h2 toc-link" data-title="Transaction">Transaction</a>
+                  </li>
+                  <li>
+                    <a href="#tocSview" class="toc-h2 toc-link" data-title="View">View</a>
                   </li>
               </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lavkumarv'>Documentation Powered by lav</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>API for Discover Account&#39;s transactions </p>
+        <h1 id="discover-account-servicing-api">Discover Account Servicing API v1.0.0</h1>
 
-<p><strong>Version:</strong> 1.0.0 </p>
-<h1 id='error'>/ERROR</h1><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<blockquote>
+<p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
+</blockquote>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>API for Discover Account&#39;s transactions</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
--H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<p>Base URLs:</p>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre><h2 id='get'><strong><em>GET</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>***GET*** /error</code> </p>
+<ul>
+<li><a href="//localhost:3000/">//localhost:3000/</a></li>
+</ul>
 
-<p><strong>Responses</strong></p>
+<p>Email: <a href="mailto:noone@nowhere.com">Dont&#39; Contact me!</a> Web: <a href="https://dontcontactme.nooneexits/about/">Dont&#39; Contact me!</a> </p>
+
+<h1 id="discover-account-servicing-api-basic-error-controller">basic-error-controller</h1>
+
+<p>Basic Error Controller</p>
+<h2 id='error'>error</h2>
+<p><a id="opIderrorUsingPATCH"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/error"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PATCH"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>PATCH /error</code></p>
+
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+
+<h3 id="error-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>OK</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-</tr>
-</tbody></table>
-<h2 id='post'><strong><em>POST</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>***POST*** /error</code> </p>
-
-<p><strong>Responses</strong></p>
-
-<table><thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-</tr>
-<tr>
-<td>201</td>
-<td>Created</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-</tr>
-</tbody></table>
-<h2 id='put'><strong><em>PUT</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>***PUT*** /error</code> </p>
-
-<p><strong>Responses</strong></p>
-
-<table><thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-</tr>
-<tr>
-<td>201</td>
-<td>Created</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-</tr>
-</tbody></table>
-<h2 id='delete'><strong><em>DELETE</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request-4'>HTTP Request</h3>
-<p><code>***DELETE*** /error</code> </p>
-
-<p><strong>Responses</strong></p>
-
-<table><thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
+<td>Inline</td>
 </tr>
 <tr>
 <td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
 <td>No Content</td>
+<td>None</td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 </tbody></table>
-<h2 id='options'><strong><em>OPTIONS</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request-5'>HTTP Request</h3>
-<p><code>***OPTIONS*** /error</code> </p>
 
-<p><strong>Responses</strong></p>
+<h3 id="error-responseschema">Response Schema</h3>
 
-<table><thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-</tr>
-<tr>
-<td>204</td>
-<td>No Content</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-</tr>
-</tbody></table>
-<h2 id='patch'><strong><em>PATCH</em></strong></h2>
-<p><strong>Summary:</strong> error</p>
-<h3 id='http-request-6'>HTTP Request</h3>
-<p><code>***PATCH*** /error</code> </p>
-
-<p><strong>Responses</strong></p>
-
-<table><thead>
-<tr>
-<th>Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-</tr>
-<tr>
-<td>204</td>
-<td>No Content</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-</tr>
-</tbody></table>
-<h1 id='v1-transactions'>/V1/TRANSACTIONS</h1><h2 id='get-2'><strong><em>GET</em></strong></h2>
-<p><strong>Summary:</strong> View all Transactions</p>
-<h3 id='http-request-7'>HTTP Request</h3>
-<p><code>***GET*** /v1/transactions</code> </p>
-
-<p><strong>Parameters</strong></p>
+<p>Status Code <strong>200</strong></p>
 
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
 <th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>» <strong>additionalProperties</strong></td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+This operation does not require authentication
+</aside>
+
+<h1 id="discover-account-servicing-api-transaction-controller">transaction-controller</h1>
+
+<p>Transaction Controller</p>
+<h2 id='view-all-transactions'>View all Transactions</h2>
+<p><a id="opIdgetAllTransactionsUsingGET"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>GET /v1/transactions</code></p>
+
+<h3 id="view-all-transactions-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>sort</td>
 <td>query</td>
-<td>sort</td>
-<td>No</td>
 <td>string</td>
+<td>false</td>
+<td>sort</td>
 </tr>
 </tbody></table>
 
-<p><strong>Responses</strong></p>
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
+</span></code></pre>
+<h3 id="view-all-transactions-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>OK</td>
+<td><a href="#schemaiterable">Iterable</a></td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 <tr>
 <td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>None</td>
 </tr>
 </tbody></table>
-<h2 id='post-2'><strong><em>POST</em></strong></h2>
-<p><strong>Summary:</strong> Save a transaction</p>
-<h3 id='http-request-8'>HTTP Request</h3>
-<p><code>***POST*** /v1/transactions</code> </p>
 
-<p><strong>Parameters</strong></p>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='save-a-transaction'>Save a transaction</h2>
+<p><a id="opIdsaveTransactionUsingPOST"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>POST /v1/transactions</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="save-a-transaction-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
+<th>In</th>
 <th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>transaction</td>
 <td>body</td>
+<td>body</td>
+<td><a href="#schematransaction">Transaction</a></td>
+<td>true</td>
 <td>transaction</td>
-<td>Yes</td>
-<td></td>
 </tr>
 </tbody></table>
 
-<p><strong>Responses</strong></p>
+<blockquote>
+<p>Example responses</p>
+
+<p>201 Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="save-a-transaction-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
 <td>Successfully created transaction</td>
+<td><a href="#schematransaction">Transaction</a></td>
 </tr>
 <tr>
 <td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
+<td>None</td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 <tr>
 <td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>None</td>
 </tr>
 </tbody></table>
-<h1 id='v1-transactions-id'>/V1/TRANSACTIONS/{ID}</h1><h2 id='get-3'><strong><em>GET</em></strong></h2>
-<p><strong>Summary:</strong> View details of a specific transaction</p>
-<h3 id='http-request-9'>HTTP Request</h3>
-<p><code>***GET*** /v1/transactions/{id}</code> </p>
 
-<p><strong>Parameters</strong></p>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='view-details-of-a-specific-transaction'>View details of a specific transaction</h2>
+<p><a id="opIdgetTransactionUsingGET"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>GET /v1/transactions/{id}</code></p>
+
+<h3 id="view-details-of-a-specific-transaction-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
+<th>In</th>
 <th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td>path</td>
+<td>integer(int64)</td>
+<td>true</td>
 <td>id</td>
-<td>Yes</td>
-<td>long</td>
 </tr>
 </tbody></table>
 
-<p><strong>Responses</strong></p>
+<blockquote>
+<p>Example responses</p>
+
+<p>200 Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="view-details-of-a-specific-transaction-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Successfully retrieved transaction</td>
+<td><a href="#schematransaction">Transaction</a></td>
 </tr>
 <tr>
 <td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
+<td>None</td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 <tr>
 <td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>None</td>
 </tr>
 </tbody></table>
-<h2 id='put-2'><strong><em>PUT</em></strong></h2>
-<p><strong>Summary:</strong> Update details of a specific transaction</p>
-<h3 id='http-request-10'>HTTP Request</h3>
-<p><code>***PUT*** /v1/transactions/{id}</code> </p>
 
-<p><strong>Parameters</strong></p>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='update-details-of-a-specific-transaction'>Update details of a specific transaction</h2>
+<p><a id="opIdupdateTransactionUsingPUT"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>PUT /v1/transactions/{id}</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="update-details-of-a-specific-transaction-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
+<th>In</th>
 <th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td>path</td>
+<td>integer(int64)</td>
+<td>true</td>
 <td>id</td>
-<td>Yes</td>
-<td>long</td>
 </tr>
 <tr>
-<td>transaction</td>
 <td>body</td>
+<td>body</td>
+<td><a href="#schematransaction">Transaction</a></td>
+<td>true</td>
 <td>transaction</td>
-<td>Yes</td>
-<td></td>
 </tr>
 </tbody></table>
 
-<p><strong>Responses</strong></p>
+<blockquote>
+<p>Example responses</p>
+
+<p>201 Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="update-details-of-a-specific-transaction-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>201</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.2">Created</a></td>
 <td>Successfully updated transaction</td>
+<td><a href="#schematransaction">Transaction</a></td>
 </tr>
 <tr>
 <td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
+<td>None</td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 <tr>
 <td>404</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>Not Found</td>
+<td>None</td>
 </tr>
 </tbody></table>
-<h2 id='delete-2'><strong><em>DELETE</em></strong></h2>
-<p><strong>Summary:</strong> Delete a specific transaction</p>
-<h3 id='http-request-11'>HTTP Request</h3>
-<p><code>***DELETE*** /v1/transactions/{id}</code> </p>
 
-<p><strong>Parameters</strong></p>
+<aside class="success">
+This operation does not require authentication
+</aside>
+<h2 id='delete-a-specific-transaction'>Delete a specific transaction</h2>
+<p><a id="opIddeleteTransactionUsingDELETE"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
+<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"DELETE"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre>
+<p><code>DELETE /v1/transactions/{id}</code></p>
+
+<h3 id="delete-a-specific-transaction-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
 <th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
+<th>In</th>
 <th>Type</th>
+<th>Required</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
 <td>path</td>
+<td>integer(int64)</td>
+<td>true</td>
 <td>id</td>
-<td>Yes</td>
-<td>long</td>
 </tr>
 </tbody></table>
 
-<p><strong>Responses</strong></p>
+<h3 id="delete-a-specific-transaction-responses">Responses</h3>
 
 <table><thead>
 <tr>
-<th>Code</th>
+<th>Status</th>
+<th>Meaning</th>
 <th>Description</th>
+<th>Schema</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
 <td>Successfully updated transaction</td>
+<td>None</td>
 </tr>
 <tr>
 <td>204</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.5">No Content</a></td>
 <td>No Content</td>
+<td>None</td>
 </tr>
 <tr>
 <td>400</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>No transaction found with ID #id</td>
+<td>None</td>
 </tr>
 <tr>
 <td>401</td>
+<td><a href="https://tools.ietf.org/html/rfc7235#section-3.1">Unauthorized</a></td>
 <td>Unauthorized</td>
+<td>None</td>
 </tr>
 <tr>
 <td>403</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.3">Forbidden</a></td>
 <td>Forbidden</td>
+<td>None</td>
 </tr>
 </tbody></table>
 
-<!-- Converted with the swagger-to-slate https://github.com/lavkumarv/swagger-to-slate -->
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+<aside class="success">
+This operation does not require authentication
 </aside>
+<h1 id='schemas'>Schemas</h1>
+<h2 id="tocSiterable">Iterable</h2>
 
-<p>The Kittn API uses the following error codes:</p>
+<p><a id="schemaiterable"></a></p>
+<pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 
+</span></code></pre>
+<p><em>Iterable</em></p>
+<h3 id='properties'>Properties</h3>
+<p><em>None</em></p>
+
+<h2 id="tocSmodelandview">ModelAndView</h2>
+
+<p><a id="schemamodelandview"></a></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"empty"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="s2">"modelMap"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="s2">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100 CONTINUE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"view"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"viewName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p><em>ModelAndView</em></p>
+<h3 id='properties-2'>Properties</h3>
 <table><thead>
 <tr>
-<th>Error Code</th>
-<th>Meaning</th>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>empty</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>model</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>modelMap</td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>» <strong>additionalProperties</strong></td>
+<td>object</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>reference</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>status</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>view</td>
+<td><a href="#schemaview">View</a></td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>viewName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+<h4 id='enumerated-values'>Enumerated Values</h4>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>100 CONTINUE</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>status</td>
+<td>101 SWITCHING_PROTOCOLS</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>status</td>
+<td>102 PROCESSING</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>status</td>
+<td>103 CHECKPOINT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>200 OK</td>
+</tr>
+<tr>
+<td>status</td>
+<td>201 CREATED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>202 ACCEPTED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>203 NON_AUTHORITATIVE_INFORMATION</td>
+</tr>
+<tr>
+<td>status</td>
+<td>204 NO_CONTENT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>205 RESET_CONTENT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>206 PARTIAL_CONTENT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>207 MULTI_STATUS</td>
+</tr>
+<tr>
+<td>status</td>
+<td>208 ALREADY_REPORTED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>226 IM_USED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>300 MULTIPLE_CHOICES</td>
+</tr>
+<tr>
+<td>status</td>
+<td>301 MOVED_PERMANENTLY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>302 FOUND</td>
+</tr>
+<tr>
+<td>status</td>
+<td>302 MOVED_TEMPORARILY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>303 SEE_OTHER</td>
+</tr>
+<tr>
+<td>status</td>
+<td>304 NOT_MODIFIED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>305 USE_PROXY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>307 TEMPORARY_REDIRECT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>308 PERMANENT_REDIRECT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>400 BAD_REQUEST</td>
+</tr>
+<tr>
+<td>status</td>
+<td>401 UNAUTHORIZED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>402 PAYMENT_REQUIRED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>403 FORBIDDEN</td>
+</tr>
+<tr>
+<td>status</td>
+<td>404 NOT_FOUND</td>
+</tr>
+<tr>
+<td>status</td>
+<td>405 METHOD_NOT_ALLOWED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>406 NOT_ACCEPTABLE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>407 PROXY_AUTHENTICATION_REQUIRED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>408 REQUEST_TIMEOUT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>409 CONFLICT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>410 GONE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>411 LENGTH_REQUIRED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>412 PRECONDITION_FAILED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>413 PAYLOAD_TOO_LARGE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>413 REQUEST_ENTITY_TOO_LARGE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>414 URI_TOO_LONG</td>
+</tr>
+<tr>
+<td>status</td>
+<td>414 REQUEST_URI_TOO_LONG</td>
+</tr>
+<tr>
+<td>status</td>
+<td>415 UNSUPPORTED_MEDIA_TYPE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>416 REQUESTED_RANGE_NOT_SATISFIABLE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>417 EXPECTATION_FAILED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>418 I_AM_A_TEAPOT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>419 INSUFFICIENT_SPACE_ON_RESOURCE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>420 METHOD_FAILURE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>421 DESTINATION_LOCKED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>422 UNPROCESSABLE_ENTITY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>423 LOCKED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>424 FAILED_DEPENDENCY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>426 UPGRADE_REQUIRED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>428 PRECONDITION_REQUIRED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>429 TOO_MANY_REQUESTS</td>
+</tr>
+<tr>
+<td>status</td>
+<td>431 REQUEST_HEADER_FIELDS_TOO_LARGE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>451 UNAVAILABLE_FOR_LEGAL_REASONS</td>
+</tr>
+<tr>
+<td>status</td>
+<td>500 INTERNAL_SERVER_ERROR</td>
+</tr>
+<tr>
+<td>status</td>
+<td>501 NOT_IMPLEMENTED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>502 BAD_GATEWAY</td>
+</tr>
+<tr>
+<td>status</td>
+<td>503 SERVICE_UNAVAILABLE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>504 GATEWAY_TIMEOUT</td>
+</tr>
+<tr>
+<td>status</td>
+<td>505 HTTP_VERSION_NOT_SUPPORTED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>506 VARIANT_ALSO_NEGOTIATES</td>
+</tr>
+<tr>
+<td>status</td>
+<td>507 INSUFFICIENT_STORAGE</td>
+</tr>
+<tr>
+<td>status</td>
+<td>508 LOOP_DETECTED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>509 BANDWIDTH_LIMIT_EXCEEDED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>510 NOT_EXTENDED</td>
+</tr>
+<tr>
+<td>status</td>
+<td>511 NETWORK_AUTHENTICATION_REQUIRED</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocStransaction">Transaction</h2>
+
+<p><a id="schematransaction"></a></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T13:48:15Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p><em>Transaction</em></p>
+<h3 id='properties-3'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>lastModified</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>merchantName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>transactionAmount</td>
+<td>number(double)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>transactionDate</td>
+<td>string(date-time)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>integer(int64)</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocSview">View</h2>
+
+<p><a id="schemaview"></a></p>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"contentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p><em>View</em></p>
+<h3 id='properties-4'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>contentType</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 </tbody></table>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="java">Java</a>
           </div>
       </div>
     </div>
