@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;json&quot;]">
+  <body class="index" data-languages="[]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -210,10 +210,6 @@
     </a>
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-              <a href="#" data-language-name="shell">Shell</a>
-              <a href="#" data-language-name="json">JSON</a>
-        </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
@@ -226,13 +222,13 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
             <a href="#transactions" class="toc-h1 toc-link" data-title="Transactions">Transactions</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get-all-transactions" class="toc-h2 toc-link" data-title="Get All Transactions">Get All Transactions</a>
-                  </li>
-                  <li>
-                    <a href="#responses" class="toc-h2 toc-link" data-title="Responses">Responses</a>
                   </li>
                   <li>
                     <a href="#save-a-transaction" class="toc-h2 toc-link" data-title="Save a transaction">Save a transaction</a>
@@ -267,6 +263,12 @@
 <p>The Discover Transactions API is organized around REST. In order to request information, the API uses HTTP methods, which can read, create, update, and delete information. The API is resource-oriented, accepts form-encoded request bodies, and responds to HTTP requests in JSON format.</p>
 <h1 id='authentication'>Authentication</h1>
 <p>For the purposes of this Proof of Concept, there is no authentication measure in place.</p>
+<h1 id='errors'>Errors</h1>
+<p>The Discover Transactions API uses conventional HTTP response codes to indicate the success or failure of an API request.</p>
+
+<p>When an action is performed on a user or a transaction that does not exist, then the user will receive a 404 Bad Request Error, which means the request was not valid usually due to a missing required parameter.</p>
+
+<p>The 200 HTTP Code indicates the success of an API request.</p>
 <h1 id='transactions'>Transactions</h1><h2 id='get-all-transactions'>Get All Transactions</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://localhost:3000/v1/transactions"</span>
 </code></pre>
 <blockquote>
@@ -291,10 +293,10 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all Transactions.</p>
+<p>Retrieves all the transactions.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /v1/transactions</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<h3 id='parameters'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -318,25 +320,7 @@
 
 <p>200 Response</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.35</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"merchantName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transactionAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.34</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre><h2 id='responses'>Responses</h2>
+<h3 id='responses'>Responses</h3>
 <table><thead>
 <tr>
 <th>Status</th>
@@ -356,27 +340,10 @@
 <aside class="success">
 This operation does not require authentication
 </aside>
-<h2 id='save-a-transaction'>Save a transaction</h2>
-<p><a id="opIdsaveTransactionUsingPOST"></a></p>
-
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-</code></pre>
+<h2 id='save-a-transaction'>Save a transaction</h2><h3 id='http-request-2'>HTTP Request</h3>
 <p><code>POST /v1/transactions</code></p>
+
+<p>Saves a new transaction in the database, given that all the parameters required are complete and valid. If a parameter is missing or invalid, then an error will be returned.</p>
 
 <blockquote>
 <p>Body parameter</p>
@@ -389,9 +356,7 @@ This operation does not require authentication
   </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="save-a-transaction-parameters">Parameters</h3>
-
+</span></code></pre><h3 id='parameters-2'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -423,9 +388,7 @@ This operation does not require authentication
   </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="save-a-transaction-responses">Responses</h3>
-
+</span></code></pre><h3 id='responses-2'>Responses</h3>
 <table><thead>
 <tr>
 <th>Status</th>
@@ -452,30 +415,10 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 <h2 id='get-transaction'>Get transaction</h2>
-<p><a id="opIdgetTransactionUsingGET"></a></p>
-
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre>
+<p>When a specific transaction ID is provided, the system will retrieve the transaction specifically associated with that transaction ID. If the transaction ID is invalid, an error will be returned.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET /v1/transactions/{id}</code></p>
-
-<h3 id="get-transaction-parameters">Parameters</h3>
-
+<h3 id='parameters-3'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -507,9 +450,7 @@ This operation does not require authentication
   </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="get-transaction-responses">Responses</h3>
-
+</span></code></pre><h3 id='responses-3'>Responses</h3>
 <table><thead>
 <tr>
 <th>Status</th>
@@ -536,26 +477,8 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 <h2 id='update-details-of-a-specific-transaction'>Update details of a specific transaction</h2>
-<p><a id="opIdupdateTransactionUsingPUT"></a></p>
-
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PUT"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre>
+<p>When a specific transaction ID is provided and the details of this transaction are updated, the transaction associated with the ID will be modified accordingly and a parameter called modified_date will show the last time this transaction was changed. If the specific transaction ID does not exist, then an error will be returned.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
 <p><code>PUT /v1/transactions/{id}</code></p>
 
 <blockquote>
@@ -569,9 +492,7 @@ This operation does not require authentication
   </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="update-details-of-a-specific-transaction-parameters">Parameters</h3>
-
+</span></code></pre><h3 id='parameters-4'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -610,9 +531,7 @@ This operation does not require authentication
   </span><span class="s2">"transactionDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-07-17T19:14:39Z"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="update-details-of-a-specific-transaction-responses">Responses</h3>
-
+</span></code></pre><h3 id='responses-4'>Responses</h3>
 <table><thead>
 <tr>
 <th>Status</th>
@@ -639,30 +558,10 @@ This operation does not require authentication
 This operation does not require authentication
 </aside>
 <h2 id='delete-a-specific-transaction'>Delete a specific transaction</h2>
-<p><a id="opIddeleteTransactionUsingDELETE"></a></p>
-
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight java tab-java"><code><span class="n">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span><span class="o">(</span><span class="s">"/localhost:3000/v1/transactions/{id}"</span><span class="o">);</span>
-<span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"DELETE"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="n">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="n">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre>
+<p>When a specific transaction ID is provided, as long as it is valid, that transaction will be deleted from the database. If the transaction ID is invalid, an error will be returned.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>DELETE /v1/transactions/{id}</code></p>
-
-<h3 id="delete-a-specific-transaction-parameters">Parameters</h3>
-
+<h3 id='parameters-5'>Parameters</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -737,7 +636,7 @@ This operation does not require authentication
 <p>This endpoint retrieves a specific kitten.</p>
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
@@ -776,7 +675,7 @@ This operation does not require authentication
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -793,10 +692,6 @@ This operation does not require authentication
 
       </div>
       <div class="dark-box">
-          <div class="lang-selector">
-                <a href="#" data-language-name="shell">Shell</a>
-                <a href="#" data-language-name="json">JSON</a>
-          </div>
       </div>
     </div>
   </body>
