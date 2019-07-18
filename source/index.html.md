@@ -1,9 +1,7 @@
 ---
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell: Shell
-  - json: JSON
+language_tabs: []
 toc_footers: []
 includes: []
 search: true
@@ -18,6 +16,14 @@ The Discover Transactions API is organized around REST. In order to request info
 # Authentication
 
 For the purposes of this Proof of Concept, there is no authentication measure in place.
+
+# Errors
+
+The Discover Transactions API uses conventional HTTP response codes to indicate the success or failure of an API request.
+
+When an action is performed on a user or a transaction that does not exist, then the user will receive a 404 Bad Request Error, which means the request was not valid usually due to a missing required parameter.
+
+The 200 HTTP Code indicates the success of an API request.
 
 # Transactions
 
@@ -50,13 +56,13 @@ curl "http://localhost:3000/v1/transactions"
 ]
 ```
 
-This endpoint retrieves all Transactions.
+Retrieves all the transactions.
 
 ### HTTP Request
 
 `GET /v1/transactions`
 
-### Query Parameters
+### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -66,28 +72,7 @@ This endpoint retrieves all Transactions.
 
 > 200 Response
 
-```json
-[
-  {
-    "id": 1,
-    "lastModified": "2019-07-17T19:14:39Z",
-    "merchantName": "string",
-    "transactionAmount": 20.35,
-    "transactionDate": "2019-07-17T19:14:39Z",
-    "userId": 101
-  },
-  {
-    "id": 2,
-    "lastModified": "2019-07-17T19:14:39Z",
-    "merchantName": "string",
-    "transactionAmount": 8.34,
-    "transactionDate": "2019-07-17T19:14:39Z",
-    "userId": 101
-  }
-]
-```
-
-## Responses
+### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -99,27 +84,11 @@ This operation does not require authentication
 
 ## Save a transaction
 
-<a id="opIdsaveTransactionUsingPOST"></a>
-
-> Code samples
-
-```java
-URL obj = new URL("/localhost:3000/v1/transactions");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("POST");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-```
+### HTTP Request
 
 `POST /v1/transactions`
+
+Saves a new transaction in the database, given that all the parameters required are complete and valid. If a parameter is missing or invalid, then an error will be returned.
 
 > Body parameter
 
@@ -134,7 +103,7 @@ System.out.println(response.toString());
 }
 ```
 
-<h3 id="save-a-transaction-parameters">Parameters</h3>
+### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -155,7 +124,7 @@ System.out.println(response.toString());
 }
 ```
 
-<h3 id="save-a-transaction-responses">Responses</h3>
+### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -168,30 +137,13 @@ This operation does not require authentication
 
 ## Get transaction
 
-<a id="opIdgetTransactionUsingGET"></a>
+When a specific transaction ID is provided, the system will retrieve the transaction specifically associated with that transaction ID. If the transaction ID is invalid, an error will be returned.
 
-> Code samples
-
-```java
-URL obj = new URL("/localhost:3000/v1/transactions/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
+### HTTP Request
 
 `GET /v1/transactions/{id}`
 
-<h3 id="get-transaction-parameters">Parameters</h3>
+### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -212,7 +164,7 @@ System.out.println(response.toString());
 }
 ```
 
-<h3 id="get-transaction-responses">Responses</h3>
+### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -225,26 +177,9 @@ This operation does not require authentication
 
 ## Update details of a specific transaction
 
-<a id="opIdupdateTransactionUsingPUT"></a>
+When a specific transaction ID is provided and the details of this transaction are updated, the transaction associated with the ID will be modified accordingly and a parameter called modified_date will show the last time this transaction was changed. If the specific transaction ID does not exist, then an error will be returned.
 
-> Code samples
-
-```java
-URL obj = new URL("/localhost:3000/v1/transactions/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("PUT");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
+### HTTP Request
 
 `PUT /v1/transactions/{id}`
 
@@ -261,7 +196,7 @@ System.out.println(response.toString());
 }
 ```
 
-<h3 id="update-details-of-a-specific-transaction-parameters">Parameters</h3>
+### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -283,7 +218,7 @@ System.out.println(response.toString());
 }
 ```
 
-<h3 id="update-details-of-a-specific-transaction-responses">Responses</h3>
+### Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -296,30 +231,13 @@ This operation does not require authentication
 
 ## Delete a specific transaction
 
-<a id="opIddeleteTransactionUsingDELETE"></a>
+When a specific transaction ID is provided, as long as it is valid, that transaction will be deleted from the database. If the transaction ID is invalid, an error will be returned.
 
-> Code samples
-
-```java
-URL obj = new URL("/localhost:3000/v1/transactions/{id}");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("DELETE");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
-```
+### HTTP Request
 
 `DELETE /v1/transactions/{id}`
 
-<h3 id="delete-a-specific-transaction-parameters">Parameters</h3>
+### Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
