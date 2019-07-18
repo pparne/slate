@@ -1,57 +1,62 @@
 ---
-title: Discover Account Servicing API
-language_tabs:
-  - java: Java
+title: API Reference
+
+language_tabs: # must be one of https://git.io/vQNgJ
+  - shell: Shell
+  - json: JSON
 toc_footers: []
 includes: []
 search: true
-highlight_theme: darkula
-headingLevel: 2
-
 ---
 
-<h1 id="discover-account-servicing-api">Discover Account Servicing API v1.0.0</h1>
+# Introduction
 
-> Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
+The Discover Transactions API allows you to retrieve all transaction data and specific transactions for Discover customers who have authorization to use the application. It also allows you to update, delete, and create transactions for these authorized users. In most cases, users will want to see all their transactions, which will return a full list of transactions in the database for the authorized user. Users can also request a specific transaction, and the Transactions API will return just that requested transaction. For each transaction, the following data will be retrieved for the user: transaction date, merchant name, transaction amount, and if there were any changes made to the transaction, a modified date..
 
-API for Discover Account's transactions
+The Discover Transactions API is organized around REST. In order to request information, the API uses HTTP methods, which can read, create, update, and delete information. The API is resource-oriented, accepts form-encoded request bodies, and responds to HTTP requests in JSON format.
 
-Base URLs:
+# Authentication
 
-* <a href="//localhost:3000/">//localhost:3000/</a>
+For the purposes of this Proof of Concept, there is no authentication measure in place.
 
-Email: <a href="mailto:noone@nowhere.com">Dont' Contact me!</a> Web: <a href="https://dontcontactme.nooneexits/about/">Dont' Contact me!</a> 
+# Transactions
 
-<h1 id="discover-account-servicing-api-transaction-controller">transaction-controller</h1>
+## Get All Transactions
 
-Transaction Controller
-
-## View all Transactions
-
-<a id="opIdgetAllTransactionsUsingGET"></a>
-
-> Code samples
-
-```java
-URL obj = new URL("/localhost:3000/v1/transactions");
-HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-con.setRequestMethod("GET");
-int responseCode = con.getResponseCode();
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-System.out.println(response.toString());
-
+```shell
+curl "http://localhost:3000/v1/transactions"
 ```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 1,
+    "lastModified": "2019-07-17T19:14:39Z",
+    "merchantName": "string",
+    "transactionAmount": 20.35,
+    "transactionDate": "2019-07-17T19:14:39Z",
+    "userId": 101
+  },
+  {
+    "id": 2,
+    "lastModified": "2019-07-17T19:14:39Z",
+    "merchantName": "string",
+    "transactionAmount": 8.34,
+    "transactionDate": "2019-07-17T19:14:39Z",
+    "userId": 101
+  }
+]
+```
+
+This endpoint retrieves all Transactions.
+
+### HTTP Request
 
 `GET /v1/transactions`
 
-<h3 id="view-all-transactions-parameters">Parameters</h3>
+### Query Parameters
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -62,10 +67,27 @@ System.out.println(response.toString());
 > 200 Response
 
 ```json
-{}
+[
+  {
+    "id": 1,
+    "lastModified": "2019-07-17T19:14:39Z",
+    "merchantName": "string",
+    "transactionAmount": 20.35,
+    "transactionDate": "2019-07-17T19:14:39Z",
+    "userId": 101
+  },
+  {
+    "id": 2,
+    "lastModified": "2019-07-17T19:14:39Z",
+    "merchantName": "string",
+    "transactionAmount": 8.34,
+    "transactionDate": "2019-07-17T19:14:39Z",
+    "userId": 101
+  }
+]
 ```
 
-<h3 id="view-all-transactions-responses">Responses</h3>
+## Responses
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -95,7 +117,6 @@ while ((inputLine = in.readLine()) != null) {
 }
 in.close();
 System.out.println(response.toString());
-
 ```
 
 `POST /v1/transactions`
@@ -315,182 +336,107 @@ System.out.println(response.toString());
 This operation does not require authentication
 </aside>
 
-# Schemas
+## Get a Specific Kitten
 
-<h2 id="tocSiterable">Iterable</h2>
+```ruby
+require 'kittn'
 
-<a id="schemaiterable"></a>
-
-```json
-{}
-
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get(2)
 ```
 
-*Iterable*
+```python
+import kittn
 
-### Properties
-
-*None*
-
-<h2 id="tocSstacktraceelement">StackTraceElement</h2>
-
-<a id="schemastacktraceelement"></a>
-
-```json
-{
-  "className": "string",
-  "fileName": "string",
-  "lineNumber": 0,
-  "methodName": "string",
-  "nativeMethod": true
-}
-
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get(2)
 ```
 
-*StackTraceElement*
+```shell
+curl "http://example.com/api/kittens/2"
+  -H "Authorization: meowmeowmeow"
+```
 
-### Properties
+```javascript
+const kittn = require('kittn');
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|className|string|false|none|none|
-|fileName|string|false|none|none|
-|lineNumber|integer(int32)|false|none|none|
-|methodName|string|false|none|none|
-|nativeMethod|boolean|false|none|none|
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.get(2);
+```
 
-<h2 id="tocSthrowable">Throwable</h2>
-
-<a id="schemathrowable"></a>
+> The above command returns JSON structured like this:
 
 ```json
 {
-  "cause": null,
-  "localizedMessage": "string",
-  "message": "string",
-  "stackTrace": [
-    {
-      "className": "string",
-      "fileName": "string",
-      "lineNumber": 0,
-      "methodName": "string",
-      "nativeMethod": true
-    }
-  ],
-  "suppressed": [
-    null
-  ]
+  "id": 2,
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
 }
-
 ```
 
-*Throwable*
+This endpoint retrieves a specific kitten.
 
-### Properties
+<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|cause|[Throwable](#schemathrowable)|false|none|none|
-|localizedMessage|string|false|none|none|
-|message|string|false|none|none|
-|stackTrace|[[StackTraceElement](#schemastacktraceelement)]|false|none|none|
-|suppressed|[[Throwable](#schemathrowable)]|false|none|none|
+### HTTP Request
 
-<h2 id="tocStransaction">Transaction</h2>
+`GET http://example.com/kittens/<ID>`
 
-<a id="schematransaction"></a>
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to retrieve
+
+## Delete a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -X DELETE
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 0,
-  "lastModified": "2019-07-17T19:14:39Z",
-  "merchantName": "string",
-  "transactionAmount": 0,
-  "transactionDate": "2019-07-17T19:14:39Z",
-  "userId": 0
+  "id": 2,
+  "deleted" : ":("
 }
-
 ```
 
-*Transaction*
+This endpoint deletes a specific kitten.
 
-### Properties
+### HTTP Request
 
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|id|integer(int64)|false|none|none|
-|lastModified|string(date-time)|false|none|none|
-|merchantName|string|false|none|none|
-|transactionAmount|number(double)|false|none|none|
-|transactionDate|string(date-time)|false|none|none|
-|userId|integer(int64)|false|none|none|
+`DELETE http://example.com/kittens/<ID>`
 
-<h2 id="tocStransactiondoesnotexistexception">TransactionDoesNotExistException</h2>
+### URL Parameters
 
-<a id="schematransactiondoesnotexistexception"></a>
-
-```json
-{
-  "cause": {
-    "cause": null,
-    "localizedMessage": "string",
-    "message": "string",
-    "stackTrace": [
-      {
-        "className": "string",
-        "fileName": "string",
-        "lineNumber": 0,
-        "methodName": "string",
-        "nativeMethod": true
-      }
-    ],
-    "suppressed": [
-      null
-    ]
-  },
-  "localizedMessage": "string",
-  "message": "string",
-  "stackTrace": [
-    {
-      "className": "string",
-      "fileName": "string",
-      "lineNumber": 0,
-      "methodName": "string",
-      "nativeMethod": true
-    }
-  ],
-  "suppressed": [
-    {
-      "cause": null,
-      "localizedMessage": "string",
-      "message": "string",
-      "stackTrace": [
-        {
-          "className": "string",
-          "fileName": "string",
-          "lineNumber": 0,
-          "methodName": "string",
-          "nativeMethod": true
-        }
-      ],
-      "suppressed": [
-        null
-      ]
-    }
-  ]
-}
-
-```
-
-*TransactionDoesNotExistException*
-
-### Properties
-
-|Name|Type|Required|Restrictions|Description|
-|---|---|---|---|---|
-|cause|[Throwable](#schemathrowable)|false|none|none|
-|localizedMessage|string|false|none|none|
-|message|string|false|none|none|
-|stackTrace|[[StackTraceElement](#schemastacktraceelement)]|false|none|none|
-|suppressed|[[Throwable](#schemathrowable)]|false|none|none|
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to delete
 
